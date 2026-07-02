@@ -5,6 +5,7 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Clients from './pages/Clients.jsx';
+import ClientDetail from './pages/ClientDetail.jsx';
 import Projects from './pages/Projects.jsx';
 import Tasks from './pages/Tasks.jsx';
 
@@ -17,6 +18,7 @@ const App = () => (
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/clients" element={<Clients />} />
+          <Route path="/clients/:id" element={<ClientDetail />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/tasks" element={<Tasks />} />
         </Route>

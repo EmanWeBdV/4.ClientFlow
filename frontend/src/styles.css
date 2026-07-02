@@ -120,6 +120,13 @@ body {
   padding: 8px 0;
 }
 
+.detail-label {
+  display: block;
+  color: #637280;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
 .empty-state {
   padding: 24px;
   background: #f9fbfd;

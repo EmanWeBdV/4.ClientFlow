@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../api/api';
 import EmptyState from '../components/EmptyState.jsx';
 import StatusBadge from '../components/StatusBadge.jsx';
@@ -97,6 +98,7 @@ const Clients = () => {
                       <td>{client.phone}</td>
                       <td><StatusBadge value={client.status} /></td>
                       <td className="text-end">
+                        <Link className="btn btn-sm btn-outline-secondary me-2" to={`/clients/${client._id}`}>Dettaglio</Link>
                         <button className="btn btn-sm btn-outline-primary me-2" onClick={() => startEdit(client)}>Modifica</button>
                         <button className="btn btn-sm btn-outline-danger" onClick={() => deleteClient(client._id)}>Elimina</button>
                       </td>
