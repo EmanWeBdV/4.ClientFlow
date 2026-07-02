@@ -100,6 +100,18 @@ MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/clientflow
 JWT_SECRET=una_chiave_segreta_lunga
 ```
 
+La stringa `MONGODB_URI` deve essere sostituita con quella reale di MongoDB Atlas. Se si lascia il valore di esempio con `cluster.mongodb.net`, il server parte ma MongoDB restituisce un errore simile a:
+
+```text
+querySrv ENOTFOUND _mongodb._tcp.cluster.mongodb.net
+```
+
+Per lavorare in locale senza Atlas, se MongoDB e installato sul computer, si puo usare:
+
+```env
+MONGODB_URI=mongodb://127.0.0.1:27017/clientflow
+```
+
 ## Installazione frontend
 
 ```bash
