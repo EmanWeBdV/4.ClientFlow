@@ -7,13 +7,16 @@
   --brand-main: #457faf;
   --brand-light: #3aa9b4;
   --page-bg: #f4f7fa;
-  --border: #dce6ee;
-  --text: #1d2b36;
-  --text-muted: #637280;
-  --danger: #b3261e;
-  --success: #1e7d43;
-  --warning: #9a6a00;
-  --radius: 8px;
+  --border: #d8e1ea;
+  --text: #1e2a36;
+  --text-muted: #5a6b7c;
+  --danger: #d64550;
+  --success: #2e9e6b;
+  --warning: #e0a02e;
+  --radius: 10px;
+  --radius-card: 12px;
+  --font-heading: 'Sora', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Reset minimo */
@@ -23,7 +26,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-body);
   background: var(--page-bg);
   color: var(--text);
   line-height: 1.5;
@@ -35,6 +38,7 @@ h3,
 h4 {
   margin: 0 0 8px;
   line-height: 1.25;
+  font-family: var(--font-heading);
 }
 
 p {
@@ -114,7 +118,7 @@ a {
 
 .btn-danger {
   background: #fff;
-  border-color: #e0a9a5;
+  border-color: #eeb3b8;
   color: var(--danger);
 }
 
@@ -168,10 +172,10 @@ textarea.field {
 .alert-error {
   margin-bottom: 14px;
   padding: 10px 14px;
-  border: 1px solid #f5c6c2;
+  border: 1px solid #f3c4c8;
   border-radius: var(--radius);
-  background: #fdecea;
-  color: var(--danger);
+  background: #fbe9ea;
+  color: #b23641;
   font-size: 0.9rem;
 }
 
@@ -186,23 +190,23 @@ textarea.field {
 }
 
 .badge-neutral {
-  background: #e8edf2;
-  color: #41505d;
+  background: #e9eef3;
+  color: #465768;
 }
 
 .badge-info {
   background: #dff3f5;
-  color: #116570;
+  color: #14707c;
 }
 
 .badge-success {
-  background: #def3e6;
-  color: var(--success);
+  background: #e0f3ea;
+  color: #1f7a50;
 }
 
 .badge-warning {
-  background: #fdf3d7;
-  color: var(--warning);
+  background: #faf0d9;
+  color: #8a5f00;
 }
 
 .badge-accent {
@@ -211,8 +215,8 @@ textarea.field {
 }
 
 .badge-danger {
-  background: #fdecea;
-  color: var(--danger);
+  background: #fbe9ea;
+  color: #b23641;
 }
 
 /* Struttura dell'app */
@@ -228,9 +232,9 @@ textarea.field {
   padding: 24px 18px;
 }
 
-.brand {
-  font-size: 1.4rem;
-  font-weight: 700;
+.brand-logo {
+  display: block;
+  height: 34px;
   margin-bottom: 28px;
 }
 
@@ -246,6 +250,8 @@ textarea.field {
   border-radius: var(--radius);
   padding: 10px 12px;
   text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
 }
 
 .nav-link.active,
@@ -329,7 +335,7 @@ textarea.field {
 .empty-state {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card);
 }
 
 .panel {
@@ -361,6 +367,7 @@ textarea.field {
 .summary-card strong {
   color: var(--brand-dark);
   font-size: 2rem;
+  font-family: var(--font-heading);
 }
 
 .item-card {
@@ -465,6 +472,12 @@ textarea.field {
   padding: 28px;
 }
 
+.auth-logo {
+  display: block;
+  height: 40px;
+  margin-bottom: 14px;
+}
+
 .auth-footer {
   margin: 14px 0 0;
   font-size: 0.85rem;
@@ -495,7 +508,8 @@ textarea.field {
     padding: 16px;
   }
 
-  .brand {
+  .brand-logo {
+    height: 30px;
     margin-bottom: 12px;
   }
 

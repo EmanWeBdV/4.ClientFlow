@@ -22,6 +22,7 @@ const Register = () => {
   return (
     <div className="auth-page">
       <div className="auth-card">
+        <img className="auth-logo" src="/clientflow-logo-horizontal.svg" alt="ClientFlow" />
         <h1>Crea account</h1>
         <p className="text-muted">Inizia a organizzare clienti, progetti e task.</p>
         {error && <div className="alert-error">{error}</div>}

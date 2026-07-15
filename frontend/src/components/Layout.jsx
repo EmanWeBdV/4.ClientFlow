@@ -13,7 +13,7 @@ const Layout = () => {
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <div className="brand">ClientFlow</div>
+        <img className="brand-logo" src="/clientflow-logo-white.svg" alt="ClientFlow" />
         <nav className="sidebar-nav">
           <NavLink className="nav-link" to="/">
             Dashboard

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" width="300" height="64">
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="#1c446d"></rect>
+  <rect x="20" y="15" width="30" height="9" rx="4.5" fill="#3aa9b4"></rect>
+  <rect x="13" y="28" width="37" height="9" rx="4.5" fill="#ffffff"></rect>
+  <rect x="20" y="41" width="23" height="9" rx="4.5" fill="#ffffff" opacity="0.55"></rect>
+
+  <g fill="none" stroke="#1c446d" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 100.8 22.2 A 11 11 0 1 0 100.8 37.8"></path>
+    <path d="M 109 17 V 44"></path>
+    <path d="M 119 26 V 44"></path>
+    <path d="M 126 34.5 H 145 M 145 34.5 A 9.5 9.5 0 1 0 142 41.5"></path>
+    <path d="M 155 25.5 V 44 M 155 32 A 6.5 6.5 0 0 1 168 32 L 168 44"></path>
+    <path d="M 179 18 V 38 Q 179 44 185 44 M 174 26 H 184"></path>
+  </g>
+  <circle cx="119" cy="18.5" r="3" fill="#1c446d"></circle>
+
+  <g fill="none" stroke="#3aa9b4" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 201 44 V 16 H 215 M 201 29.5 H 211"></path>
+    <path d="M 225 17 V 44"></path>
+    <circle cx="241.5" cy="34.5" r="9.5"></circle>
+    <path d="M 258 25.5 L 263.5 44 L 269 29 L 274.5 44 L 280 25.5"></path>
+  </g>
+</svg>

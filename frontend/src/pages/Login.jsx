@@ -22,7 +22,7 @@ const Login = () => {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <h1>ClientFlow</h1>
+        <img className="auth-logo" src="/clientflow-logo-horizontal.svg" alt="ClientFlow" />
         <p className="text-muted">Accedi al tuo spazio di lavoro.</p>
         {error && <div className="alert-error">{error}</div>}
         <form onSubmit={handleSubmit}>
