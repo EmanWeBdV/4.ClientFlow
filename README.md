@@ -258,7 +258,7 @@ Con questo progetto ho ripassato il flusso completo di una web app: creazione de
 
 ## 👤 Autore
 
-**Emanuele Vaccaro** — Progetto Capstone del corso Web Developer
+**Emanuele Maria Vaccaro** — Progetto Capstone del corso Web Developer
 
 ---
 
