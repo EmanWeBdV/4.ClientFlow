@@ -1,31 +1,221 @@
+/* ==========================================================
+   ClientFlow - foglio di stile scritto a mano (niente framework)
+   ========================================================== */
+
 :root {
   --brand-dark: #1c446d;
   --brand-main: #457faf;
   --brand-light: #3aa9b4;
   --page-bg: #f4f7fa;
   --border: #dce6ee;
+  --text: #1d2b36;
+  --text-muted: #637280;
+  --danger: #b3261e;
+  --success: #1e7d43;
+  --warning: #9a6a00;
+  --radius: 8px;
+}
+
+/* Reset minimo */
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   background: var(--page-bg);
-  color: #1d2b36;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+a {
+  color: var(--brand-main);
+}
+
+/* Utility */
+.text-muted {
+  color: var(--text-muted);
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Bottoni */
+.btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 9px 16px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  background: none;
+  color: inherit;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 0.83rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
 }
 
 .btn-primary {
-  --bs-btn-bg: var(--brand-dark);
-  --bs-btn-border-color: var(--brand-dark);
-  --bs-btn-hover-bg: #16375a;
-  --bs-btn-hover-border-color: #16375a;
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
+  color: #fff;
 }
 
-.btn-outline-primary {
-  --bs-btn-color: var(--brand-dark);
-  --bs-btn-border-color: var(--brand-main);
-  --bs-btn-hover-bg: var(--brand-dark);
-  --bs-btn-hover-border-color: var(--brand-dark);
+.btn-primary:hover {
+  background: #16375a;
+  border-color: #16375a;
 }
 
+.btn-outline {
+  background: #fff;
+  border-color: var(--brand-main);
+  color: var(--brand-dark);
+}
+
+.btn-outline:hover {
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
+  color: #fff;
+}
+
+.btn-danger {
+  background: #fff;
+  border-color: #e0a9a5;
+  color: var(--danger);
+}
+
+.btn-danger:hover {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #fff;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  font: inherit;
+  color: inherit;
+}
+
+.field:focus {
+  outline: 2px solid var(--brand-light);
+  outline-offset: 1px;
+  border-color: var(--brand-main);
+}
+
+textarea.field {
+  resize: vertical;
+}
+
+.stacked-form .field {
+  margin-bottom: 10px;
+}
+
+.stacked-form .btn {
+  margin-top: 4px;
+}
+
+/* Messaggi di errore */
+.alert-error {
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  border: 1px solid #f5c6c2;
+  border-radius: var(--radius);
+  background: #fdecea;
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+/* Badge di stato */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-neutral {
+  background: #e8edf2;
+  color: #41505d;
+}
+
+.badge-info {
+  background: #dff3f5;
+  color: #116570;
+}
+
+.badge-success {
+  background: #def3e6;
+  color: var(--success);
+}
+
+.badge-warning {
+  background: #fdf3d7;
+  color: var(--warning);
+}
+
+.badge-accent {
+  background: #e3ecf6;
+  color: var(--brand-dark);
+}
+
+.badge-danger {
+  background: #fdecea;
+  color: var(--danger);
+}
+
+/* Struttura dell'app */
 .app-shell {
   min-height: 100vh;
   display: grid;
@@ -44,14 +234,22 @@ body {
   margin-bottom: 28px;
 }
 
-.sidebar .nav-link {
-  color: rgba(255, 255, 255, 0.82);
-  border-radius: 8px;
-  padding: 10px 12px;
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.sidebar .nav-link.active,
-.sidebar .nav-link:hover {
+.nav-link {
+  display: block;
+  color: rgba(255, 255, 255, 0.82);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  text-decoration: none;
+}
+
+.nav-link.active,
+.nav-link:hover {
   background: rgba(255, 255, 255, 0.13);
   color: #fff;
 }
@@ -71,15 +269,59 @@ body {
   gap: 16px;
 }
 
+.topbar-title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .content {
   padding: 28px;
 }
 
+/* Griglie */
 .page-stack {
   display: grid;
   gap: 24px;
 }
 
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-2-sm {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) 2fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Pannelli e card */
 .panel,
 .summary-card,
 .item-card,
@@ -87,11 +329,22 @@ body {
 .empty-state {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius);
 }
 
 .panel {
   padding: 20px;
+}
+
+.panel-title {
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+}
+
+.column-title {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
 }
 
 .summary-card {
@@ -101,7 +354,7 @@ body {
 
 .summary-card span {
   display: block;
-  color: #637280;
+  color: var(--text-muted);
   margin-bottom: 8px;
 }
 
@@ -115,6 +368,16 @@ body {
   height: 100%;
 }
 
+.item-card p {
+  margin-bottom: 8px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
 .mini-row {
   border-bottom: 1px solid var(--border);
   padding: 8px 0;
@@ -122,7 +385,7 @@ body {
 
 .detail-label {
   display: block;
-  color: #637280;
+  color: var(--text-muted);
   font-size: 0.85rem;
   margin-bottom: 4px;
 }
@@ -132,6 +395,63 @@ body {
   background: #f9fbfd;
 }
 
+.empty-state h2 {
+  font-size: 1rem;
+}
+
+.empty-state p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* Liste della dashboard */
+.stack-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stack-item:last-child {
+  border-bottom: none;
+}
+
+/* Tabelle */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  vertical-align: middle;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.cell-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* Pagine di autenticazione */
 .auth-page {
   min-height: 100vh;
   display: grid;
@@ -145,10 +465,27 @@ body {
   padding: 28px;
 }
 
-.table {
-  margin-bottom: 0;
+.auth-footer {
+  margin: 14px 0 0;
+  font-size: 0.85rem;
 }
 
+/* ==========================================================
+   Responsive scritto a mano con media query
+   ========================================================== */
+
+/* Tablet: il layout form + lista e le colonne doppie si impilano */
+@media (max-width: 992px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* La sidebar diventa una barra orizzontale in alto */
 @media (max-width: 800px) {
   .app-shell {
     grid-template-columns: 1fr;
@@ -162,8 +499,8 @@ body {
     margin-bottom: 12px;
   }
 
-  .sidebar .nav {
-    flex-direction: row !important;
+  .sidebar-nav {
+    flex-direction: row;
     overflow-x: auto;
   }
 
@@ -174,5 +511,26 @@ body {
 
   .content {
     padding: 16px;
+  }
+}
+
+/* Smartphone: card riepilogo e griglie interne su una colonna */
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-2-sm {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar-username {
+    display: none;
   }
 }

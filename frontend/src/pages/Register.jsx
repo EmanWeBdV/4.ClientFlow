@@ -22,42 +22,42 @@ const Register = () => {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <h1 className="h3 mb-2">Crea account</h1>
+        <h1>Crea account</h1>
         <p className="text-muted">Inizia a organizzare clienti, progetti e task.</p>
-        {error && <div className="alert alert-danger">{error}</div>}
+        {error && <div className="alert-error">{error}</div>}
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
+          <div className="form-group">
             <label className="form-label">Nome</label>
             <input
-              className="form-control"
+              className="field"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label className="form-label">Email</label>
             <input
-              className="form-control"
+              className="field"
               type="email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label className="form-label">Password</label>
             <input
-              className="form-control"
+              className="field"
               type="password"
               value={form.password}
               onChange={(e) => setForm({ ...form, password: e.target.value })}
               required
             />
           </div>
-          <button className="btn btn-primary w-100">Registrati</button>
+          <button className="btn btn-primary btn-block">Registrati</button>
         </form>
-        <p className="mt-3 mb-0 small">
+        <p className="auth-footer">
           Hai gia un account? <Link to="/login">Accedi</Link>
         </p>
       </div>

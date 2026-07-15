@@ -1,21 +1,21 @@
 const colors = {
-  Nuovo: 'bg-info',
-  Attivo: 'bg-success',
-  'In pausa': 'bg-warning text-dark',
-  Chiuso: 'bg-secondary',
-  'Da iniziare': 'bg-secondary',
-  'In revisione': 'bg-primary',
-  Completato: 'bg-success',
-  'Da fare': 'bg-secondary',
-  'In corso': 'bg-primary',
-  Completata: 'bg-success',
-  Bassa: 'bg-secondary',
-  Media: 'bg-info',
-  Alta: 'bg-danger'
+  Nuovo: 'badge-info',
+  Attivo: 'badge-success',
+  'In pausa': 'badge-warning',
+  Chiuso: 'badge-neutral',
+  'Da iniziare': 'badge-neutral',
+  'In revisione': 'badge-accent',
+  Completato: 'badge-success',
+  'Da fare': 'badge-neutral',
+  'In corso': 'badge-accent',
+  Completata: 'badge-success',
+  Bassa: 'badge-neutral',
+  Media: 'badge-info',
+  Alta: 'badge-danger'
 };
 
 const StatusBadge = ({ value }) => (
-  <span className={`badge ${colors[value] || 'bg-secondary'}`}>{value}</span>
+  <span className={`badge ${colors[value] || 'badge-neutral'}`}>{value}</span>
 );
 
 export default StatusBadge;

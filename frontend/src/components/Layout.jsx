@@ -14,7 +14,7 @@ const Layout = () => {
     <div className="app-shell">
       <aside className="sidebar">
         <div className="brand">ClientFlow</div>
-        <nav className="nav flex-column gap-1">
+        <nav className="sidebar-nav">
           <NavLink className="nav-link" to="/">
             Dashboard
           </NavLink>
@@ -34,11 +34,11 @@ const Layout = () => {
         <header className="topbar">
           <div>
             <span className="text-muted small">Area di lavoro</span>
-            <h1 className="h4 mb-0">Gestione clienti e progetti</h1>
+            <h1 className="topbar-title">Gestione clienti e progetti</h1>
           </div>
-          <div className="d-flex align-items-center gap-3">
-            <span className="small d-none d-sm-inline">{user?.name}</span>
-            <button className="btn btn-outline-primary btn-sm" onClick={handleLogout}>
+          <div className="topbar-user">
+            <span className="topbar-username small">{user?.name}</span>
+            <button className="btn btn-outline btn-sm" onClick={handleLogout}>
               Logout
             </button>
           </div>

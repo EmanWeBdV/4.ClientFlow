@@ -22,33 +22,33 @@ const Login = () => {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <h1 className="h3 mb-2">ClientFlow</h1>
+        <h1>ClientFlow</h1>
         <p className="text-muted">Accedi al tuo spazio di lavoro.</p>
-        {error && <div className="alert alert-danger">{error}</div>}
+        {error && <div className="alert-error">{error}</div>}
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
+          <div className="form-group">
             <label className="form-label">Email</label>
             <input
-              className="form-control"
+              className="field"
               type="email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="form-group">
             <label className="form-label">Password</label>
             <input
-              className="form-control"
+              className="field"
               type="password"
               value={form.password}
               onChange={(e) => setForm({ ...form, password: e.target.value })}
               required
             />
           </div>
-          <button className="btn btn-primary w-100">Entra</button>
+          <button className="btn btn-primary btn-block">Entra</button>
         </form>
-        <p className="mt-3 mb-0 small">
+        <p className="auth-footer">
           Non hai un account? <Link to="/register">Registrati</Link>
         </p>
       </div>

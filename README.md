@@ -22,7 +22,7 @@ Quando si seguono piu clienti e facile perdere informazioni tra chat, email e do
 - CRUD progetti
 - CRUD task
 - Dashboard con conteggi e ultime attivita
-- UI responsive con React, Vite e Bootstrap
+- UI responsive con React, Vite e CSS scritto a mano (media query, flexbox e grid)
 - API REST con Express, MongoDB e Mongoose
 - Test base backend con Jest e Supertest
 
@@ -33,7 +33,7 @@ Frontend:
 - React
 - Vite
 - JavaScript
-- Bootstrap
+- CSS personalizzato (senza framework UI)
 - React Router
 - Axios
 
