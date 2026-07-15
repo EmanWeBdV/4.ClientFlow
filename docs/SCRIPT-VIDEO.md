@@ -68,7 +68,7 @@ Due parole sul codice. Il backend è organizzato per responsabilità: i modelli 
 
 [Torna sull'app, sulla dashboard]
 
-Per concludere: il progetto è deployato con il frontend su Vercel, il backend su Render e il database su MongoDB Atlas. Con questo progetto ho messo insieme tutto il percorso: la costruzione di un'API REST, l'autenticazione con token, un database con relazioni tra le entità, e un frontend React con rotte protette e stile scritto a mano. Tra le cose che vorrei aggiungere in futuro: filtri e ricerca nelle liste, più test e l'upload di documenti per i progetti. Grazie per l'attenzione.
+Per concludere: il progetto è deployato con il frontend su Vercel, il backend su Render e il database su MongoDB Atlas. Una nota sulla trasparenza: ho usato strumenti di AI come supporto per inventare i dati demo — i clienti, i progetti e i task di esempio che avete visto — e per la brand identity del progetto, cioè il logo e la palette dei colori. Con questo progetto ho messo insieme tutto il percorso: la costruzione di un'API REST, l'autenticazione con token, un database con relazioni tra le entità, e un frontend React con rotte protette e stile scritto a mano. Tra le cose che vorrei aggiungere in futuro: filtri e ricerca nelle liste, più test e l'upload di documenti per i progetti. Grazie per l'attenzione.
 
 ---
 

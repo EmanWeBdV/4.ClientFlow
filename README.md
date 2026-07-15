@@ -195,6 +195,13 @@ La parte piu importante e stata collegare bene le entita tra loro: un progetto a
 - Aggiungere test anche per clienti, progetti e task
 - Inserire upload di documenti o allegati per i progetti
 
+## Uso dell'AI
+
+Ho usato strumenti di AI come supporto per:
+
+- inventare i dati demo (clienti, progetti e task di esempio)
+- la brand identity del progetto (logo e palette colori)
+
 ## Cosa ho imparato
 
 Con questo progetto ho ripassato il flusso completo di una web app: creazione delle API, collegamento a MongoDB, autenticazione con token, protezione delle rotte, chiamate dal frontend e organizzazione di componenti React riutilizzabili. Ho capito meglio anche quanto sia importante mantenere nomi chiari e file con responsabilita precise, per poter spiegare il progetto durante una presentazione.
