@@ -777,6 +777,37 @@ textarea.field {
   flex-wrap: wrap;
 }
 
+/* Righe task colorate per stato */
+.row-todo td {
+  background: #fbf5e8;
+}
+
+.row-todo td:first-child {
+  box-shadow: inset 3px 0 0 var(--warning);
+}
+
+.row-doing td {
+  background: #edf4fb;
+}
+
+.row-doing td:first-child {
+  box-shadow: inset 3px 0 0 var(--brand-main);
+}
+
+.row-done td {
+  background: #e9f6ef;
+  color: var(--text-muted);
+}
+
+.row-done td:first-child {
+  box-shadow: inset 3px 0 0 var(--success);
+}
+
+.row-done strong {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
 .mini-select {
   width: auto;
   padding: 5px 8px;

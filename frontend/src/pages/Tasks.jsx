@@ -84,6 +84,11 @@ const Tasks = () => {
     return matchesSearch && matchesStatus && matchesPriority;
   });
 
+  // Le task completate scendono in fondo, il resto mantiene l'ordine per scadenza
+  const sorted = [...filtered].sort((a, b) => (a.status === 'Completata') - (b.status === 'Completata'));
+
+  const rowClasses = { 'Da fare': 'row-todo', 'In corso': 'row-doing', Completata: 'row-done' };
+
   if (loading) return <p>Caricamento task...</p>;
 
   return (
@@ -137,7 +142,7 @@ const Tasks = () => {
           </div>
 
           <div className="panel">
-            {filtered.length === 0 ? (
+            {sorted.length === 0 ? (
               <p className="text-muted">Nessun task corrisponde alla ricerca.</p>
             ) : (
               <div className="table-wrap">
@@ -153,8 +158,8 @@ const Tasks = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {filtered.map((task) => (
-                      <tr key={task._id}>
+                    {sorted.map((task) => (
+                      <tr key={task._id} className={rowClasses[task.status] || ''}>
                         <td>
                           <strong>{task.title}</strong>
                           <div className="text-muted small">{task.description}</div>
