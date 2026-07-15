@@ -7,7 +7,7 @@
 **Web app full stack per gestire clienti, progetti e task in un unico posto.**
 Pensata per freelance e piccoli team che vogliono smettere di rincorrere informazioni tra email, chat e fogli Excel.
 
-*Progetto Capstone finale del corso Web Developer — realizzato a scopo didattico.*
+_Progetto Capstone finale del corso Web Developer — realizzato a scopo didattico._
 
 ![Capstone](https://img.shields.io/badge/Progetto-Capstone-1c446d?style=for-the-badge)
 ![Full Stack](https://img.shields.io/badge/Full-Stack-3aa9b4?style=for-the-badge)
@@ -24,7 +24,7 @@ Pensata per freelance e piccoli team che vogliono smettere di rincorrere informa
 
 <div align="center">
 
-<img src="docs/screenshots/dashboard.png" alt="Dashboard di ClientFlow" width="800" />
+<img src="docs/screenshots/dashboard.jpg" alt="Dashboard di ClientFlow" width="800" />
 
 </div>
 
@@ -32,7 +32,7 @@ Pensata per freelance e piccoli team che vogliono smettere di rincorrere informa
 
 ## 🚀 Demo
 
-- **Frontend (Vercel):** `https://SOSTITUISCI-CON-URL.vercel.app`
+- **Frontend (Vercel):** `https://client-flow-roan.vercel.app/`
 - **API (Render):** `https://clientflow-api-ey0j.onrender.com`
 
 > Nota: il backend è su piano gratuito Render e si "addormenta" dopo 15 minuti di inattività. La prima richiesta può richiedere 30-60 secondi.
@@ -206,19 +206,19 @@ Lo script aggiunge 8 clienti, 12 progetti e 25 task collegati all'utente indicat
 
 ## 🔌 API principali
 
-| Metodo | Endpoint | Descrizione |
-|---|---|---|
-| POST | `/api/auth/register` | Registrazione |
-| POST | `/api/auth/login` | Login, restituisce il token JWT |
-| GET/POST | `/api/clients` | Elenco e creazione clienti |
-| GET/PUT/DELETE | `/api/clients/:id` | Dettaglio, modifica, eliminazione |
-| GET/POST | `/api/projects` | Elenco e creazione progetti |
-| PUT/DELETE | `/api/projects/:id` | Modifica (anche solo stato), eliminazione |
-| GET/POST | `/api/tasks` | Elenco e creazione task |
-| PUT/DELETE | `/api/tasks/:id` | Modifica (anche solo stato), eliminazione |
-| GET | `/api/dashboard` | Contatori e riepiloghi |
-| GET | `/api/activities` | Registro attività |
-| GET | `/api/notifications` | Scadenze entro 7 giorni e ritardi |
+| Metodo         | Endpoint             | Descrizione                               |
+| -------------- | -------------------- | ----------------------------------------- |
+| POST           | `/api/auth/register` | Registrazione                             |
+| POST           | `/api/auth/login`    | Login, restituisce il token JWT           |
+| GET/POST       | `/api/clients`       | Elenco e creazione clienti                |
+| GET/PUT/DELETE | `/api/clients/:id`   | Dettaglio, modifica, eliminazione         |
+| GET/POST       | `/api/projects`      | Elenco e creazione progetti               |
+| PUT/DELETE     | `/api/projects/:id`  | Modifica (anche solo stato), eliminazione |
+| GET/POST       | `/api/tasks`         | Elenco e creazione task                   |
+| PUT/DELETE     | `/api/tasks/:id`     | Modifica (anche solo stato), eliminazione |
+| GET            | `/api/dashboard`     | Contatori e riepiloghi                    |
+| GET            | `/api/activities`    | Registro attività                         |
+| GET            | `/api/notifications` | Scadenze entro 7 giorni e ritardi         |
 
 Tutte le rotte (tranne l'autenticazione) richiedono l'header `Authorization: Bearer <token>`.
 
@@ -233,11 +233,11 @@ Test con Jest e Supertest sull'autenticazione: registrazione, login corretto, lo
 
 ## ☁️ Deploy
 
-| Componente | Servizio | Note |
-|---|---|---|
-| Frontend | Vercel | root `frontend`, variabile `VITE_API_URL`, rewrite SPA in `vercel.json` |
-| Backend | Render | root `backend`, start `npm start`, variabili `MONGODB_URI` e `JWT_SECRET` |
-| Database | MongoDB Atlas | cluster M0 gratuito, accesso di rete aperto per Render |
+| Componente | Servizio      | Note                                                                      |
+| ---------- | ------------- | ------------------------------------------------------------------------- |
+| Frontend   | Vercel        | root `frontend`, variabile `VITE_API_URL`, rewrite SPA in `vercel.json`   |
+| Backend    | Render        | root `backend`, start `npm start`, variabili `MONGODB_URI` e `JWT_SECRET` |
+| Database   | MongoDB Atlas | cluster M0 gratuito, accesso di rete aperto per Render                    |
 
 La guida completa passo passo è in [docs/GUIDA-DEPLOY.md](docs/GUIDA-DEPLOY.md).
 
