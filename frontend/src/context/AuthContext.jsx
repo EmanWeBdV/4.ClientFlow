@@ -14,20 +14,13 @@ export const AuthProvider = ({ children }) => {
     setUser(data.user);
   };
 
-  const register = async (formData) => {
-    const { data } = await api.post('/auth/register', formData);
-    localStorage.setItem('clientflow_token', data.token);
-    localStorage.setItem('clientflow_user', JSON.stringify(data.user));
-    setUser(data.user);
-  };
-
   const logout = () => {
     localStorage.removeItem('clientflow_token');
     localStorage.removeItem('clientflow_user');
     setUser(null);
   };
 
-  const value = useMemo(() => ({ user, login, register, logout }), [user]);
+  const value = useMemo(() => ({ user, login, logout }), [user]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

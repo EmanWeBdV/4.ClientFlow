@@ -8,6 +8,7 @@ import Clients from './pages/Clients.jsx';
 import ClientDetail from './pages/ClientDetail.jsx';
 import Projects from './pages/Projects.jsx';
 import Tasks from './pages/Tasks.jsx';
+import Activity from './pages/Activity.jsx';
 
 const App = () => (
   <BrowserRouter>
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/clients/:id" element={<ClientDetail />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/tasks" element={<Tasks />} />
+          <Route path="/activity" element={<Activity />} />
         </Route>
       </Route>
     </Routes>

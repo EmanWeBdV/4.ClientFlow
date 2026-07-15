@@ -1,80 +1,80 @@
 # Copione per il video di presentazione
 
-Da leggere mentre mostri l'app sullo schermo. Tra parentesi quadre trovi [cosa mostrare in quel momento]. Durata stimata: 5-6 minuti a ritmo tranquillo.
+Da leggere mentre mostri l'app sullo schermo. Tra parentesi quadre trovi [cosa mostrare in quel momento]. Durata stimata: 6-7 minuti a ritmo tranquillo.
 
 ---
 
 ## 1. Introduzione (30 secondi)
 
-[Mostra la pagina di login]
+[Mostra la pagina di login con il logo]
 
 Ciao, sono Emanuele e questo è ClientFlow, il mio progetto Capstone. ClientFlow è una web app full stack pensata per freelance e piccoli team che seguono più clienti contemporaneamente. Il problema che risolve è semplice: quando lavori con tanti clienti, le informazioni si perdono tra email, chat e fogli di calcolo. ClientFlow raccoglie tutto in un unico posto: i clienti, i progetti collegati a ogni cliente, e i task collegati a ogni progetto.
 
-## 2. Tecnologie (30 secondi)
+## 2. Tecnologie e brand (30 secondi)
 
-[Resta sulla pagina di login, oppure mostra velocemente l'editor con la struttura delle cartelle]
+[Resta sul login, indica logo e grafica]
 
-Il progetto è diviso in due parti. Il frontend è fatto con React e Vite, con React Router per la navigazione e Axios per le chiamate API. Lo stile è CSS scritto interamente a mano, senza framework: il responsive è gestito con CSS Grid, Flexbox e media query. Il backend è un'API REST costruita con Node ed Express, con MongoDB come database attraverso Mongoose. L'autenticazione usa JSON Web Token e le password sono criptate con bcrypt.
+Il progetto è diviso in due parti. Il frontend è fatto con React e Vite, con React Router per la navigazione e Axios per le chiamate API. Lo stile è CSS scritto interamente a mano, senza framework: griglie, componenti e responsive sono fatti con CSS Grid, Flexbox e media query. Anche il progetto ha una sua brand identity: logo, palette colori e tipografia dedicate. Il backend è un'API REST costruita con Node ed Express, con MongoDB come database attraverso Mongoose. L'autenticazione usa JSON Web Token e le password sono criptate con bcrypt.
 
 ## 3. Registrazione e login (45 secondi)
 
-[Vai su "Registrati", compila il form e crea un account]
+[Vai su "Registrati", mostra i campi e l'occhio che mostra la password]
 
-Partiamo dall'inizio: un nuovo utente si registra con nome, email e password. Quando invio il form, il backend controlla che l'email non sia già usata, cripta la password con bcrypt — quindi nel database non viene mai salvata in chiaro — e mi restituisce un token JWT. Il frontend salva il token e lo invia automaticamente in ogni chiamata successiva, grazie a un interceptor di Axios. Tutte le pagine interne sono protette: se provo ad aprirle senza essere loggato, vengo rimandato al login. E la stessa protezione c'è anche lato server: ogni rotta dell'API verifica il token prima di rispondere.
+Un nuovo utente si registra con nome, email e password: la password va inserita due volte per conferma, e con l'icona a occhio posso controllare cosa sto scrivendo. Quando invio il form, il backend verifica che l'email non sia già usata e cripta la password con bcrypt, quindi nel database non viene mai salvata in chiaro. [Mostra la schermata di conferma] Dopo la registrazione l'app mi avvisa che non è prevista una email di conferma e che posso accedere subito con le credenziali appena create. [Fai il login] Al login ricevo un token JWT che il frontend invia automaticamente in ogni chiamata grazie a un interceptor di Axios. Tutte le pagine interne sono protette, e la stessa protezione c'è anche lato server su ogni rotta dell'API.
 
-## 4. Dashboard (30 secondi)
+## 4. Dashboard (40 secondi)
 
-[Sei sulla dashboard dopo la registrazione]
+[Sei sulla dashboard]
 
-Questa è la dashboard. In alto ci sono tre contatori: clienti totali, progetti attivi e task ancora aperti. Sotto, a sinistra, i task in scadenza nei prossimi sette giorni, e a destra gli ultimi clienti e progetti inseriti. Ora è vuota perché l'account è nuovo, quindi riempiamola.
+Questa è la dashboard. In alto tre contatori con le icone: clienti totali, progetti attivi e task ancora aperti — sono cliccabili e portano alle rispettive sezioni. Sotto, i task in scadenza nei prossimi sette giorni con priorità e data, e gli ultimi clienti e progetti inseriti. [Clicca la campanella in alto] In alto c'è anche il centro notifiche: mi segnala i progetti e i task in scadenza nei prossimi giorni e quelli già in ritardo.
 
-## 5. Clienti (1 minuto)
+## 5. Clienti (45 secondi)
 
-[Vai su "Clienti", crea un cliente con il form a sinistra]
+[Vai su "Clienti"]
 
-Nella pagina Clienti ho un form per inserire un nuovo cliente: nome, email, telefono, uno stato — ad esempio Nuovo, Attivo o In pausa — e delle note libere. [Crea il cliente] Il cliente appare subito nella tabella. Da qui posso modificarlo, eliminarlo, o aprire la pagina di dettaglio.
+Nella pagina Clienti ho l'elenco completo con ricerca e filtro per stato. [Scrivi qualcosa nella ricerca, poi filtra per stato] Con il pulsante "Aggiungi cliente" si apre una finestra modale dove inserisco nome, contatti, stato e note. [Crea un cliente] Su ogni riga ho un menu con tre puntini: dettaglio, modifica — che riapre la stessa modale con i dati già compilati — ed elimina, che chiede una conferma esplicita perché cancella anche i progetti e i task collegati. [Apri il dettaglio di un cliente] La pagina di dettaglio mostra le informazioni del cliente e i suoi progetti. Ogni dato appartiene solo all'utente loggato: tutte le query filtrano per l'id dell'utente.
 
-[Clicca "Dettaglio"]
+## 6. Progetti con kanban (1 minuto)
 
-La pagina di dettaglio mostra tutte le informazioni del cliente e, sotto, i progetti collegati a lui. Ogni dato appartiene solo all'utente loggato: nell'API tutte le query filtrano per l'id dell'utente, quindi un altro account non può vedere i miei clienti.
+[Vai su "Progetti"]
 
-## 6. Progetti e task (1 minuto)
+I progetti sono organizzati in una bacheca kanban con quattro colonne: da iniziare, attivo, in revisione e completato. [Trascina una card da una colonna all'altra] Posso trascinare una card da una colonna all'altra e lo stato si aggiorna direttamente nel database; in alternativa c'è il selettore di stato sulla card, comodo da mobile. Ogni progetto ha il cliente, la data di scadenza in evidenza e il menu con modifica ed elimina con conferma. [Apri "Aggiungi progetto"] Nella modale di creazione i campi sono tutti etichettati, comprese la data di inizio e la scadenza. Sopra la bacheca ci sono la ricerca per titolo o cliente e il filtro per cliente.
 
-[Vai su "Progetti", crea un progetto scegliendo il cliente dal menu]
+## 7. Task (30 secondi)
 
-Ora creo un progetto: titolo, il cliente a cui appartiene — scelto da un menu a tendina — uno stato, le date di inizio e scadenza e una descrizione. [Crea il progetto] Il progetto compare come card, con il badge colorato dello stato e il nome del cliente.
+[Vai su "Task"]
 
-[Vai su "Task", crea un task scegliendo il progetto]
+I task funzionano allo stesso modo: ricerca, filtri per stato e priorità, creazione e modifica in modale. La cosa più comoda è il selettore di stato direttamente nella tabella: segno una task come "in corso" o "completata" al volo, senza aprire nulla. [Cambia stato a una task]
 
-Lo stesso vale per i task: ogni task è collegato a un progetto, ha una priorità — bassa, media o alta — uno stato e una scadenza. [Crea il task]
+## 8. Attività e notifiche (30 secondi)
 
-[Torna sulla Dashboard]
+[Vai su "Attività"]
 
-Se torno sulla dashboard, i contatori si sono aggiornati e il task appena creato appare tra le scadenze della settimana. C'è anche una logica di eliminazione a cascata: se elimino un cliente, vengono eliminati anche i suoi progetti e i task collegati, per non lasciare dati orfani nel database.
+Ogni azione che ho fatto finora è stata registrata automaticamente: la pagina Attività è il registro dello spazio di lavoro, con data e ora di ogni creazione, modifica, eliminazione e cambio di stato. È il backend che scrive il log a ogni operazione, quindi niente può sfuggire.
 
-## 7. Responsive (30 secondi)
+## 9. Responsive (30 secondi)
 
-[Restringi la finestra del browser o apri i dev tools in modalità mobile]
+[Restringi la finestra o usa i dev tools in modalità mobile]
 
-L'interfaccia è completamente responsive, con CSS scritto a mano. Su schermi piccoli la sidebar diventa una barra orizzontale in alto, le griglie a più colonne si impilano su una colonna sola e le tabelle si possono scorrere in orizzontale. Tutto questo è gestito con media query, senza nessun framework CSS.
+L'interfaccia è completamente responsive, con CSS scritto a mano. Su mobile la sidebar diventa un menu hamburger che scorre da sinistra, le griglie si impilano, la bacheca kanban si scorre in orizzontale e le tabelle restano leggibili. [Apri e chiudi l'hamburger, trascina il kanban] Tutto gestito con media query, senza framework CSS.
 
-## 8. Codice e test (45 secondi)
+## 10. Codice e test (45 secondi)
 
-[Mostra l'editor: prima la cartella backend, poi il file dei test, poi lancia npm test]
+[Mostra l'editor: cartella backend, file dei test, poi lancia npm test]
 
-Due parole sul codice. Il backend è organizzato per responsabilità: i modelli Mongoose definiscono i dati — Utente, Cliente, Progetto e Task — le rotte gestiscono le operazioni CRUD, e un middleware verifica il token JWT su tutte le rotte protette. Ho scritto anche dei test con Jest e Supertest sulla parte più delicata, l'autenticazione: verificano la registrazione, il login corretto e il rifiuto di un login con password sbagliata. [Lancia npm test e mostra i 3 test verdi]
+Due parole sul codice. Il backend è organizzato per responsabilità: i modelli Mongoose definiscono i dati — Utente, Cliente, Progetto, Task e Attività — le rotte gestiscono le operazioni CRUD, un middleware verifica il token JWT e una utility scrive il log delle attività. Ho scritto anche dei test con Jest e Supertest sulla parte più delicata, l'autenticazione: registrazione, login corretto e rifiuto di un login con password sbagliata. [Lancia npm test e mostra i 3 test verdi]
 
-## 9. Chiusura (30 secondi)
+## 11. Chiusura (30 secondi)
 
 [Torna sull'app, sulla dashboard]
 
-Per concludere: il progetto è deployato con il frontend su Vercel, il backend su Render e il database su MongoDB Atlas. Una nota sulla trasparenza: ho usato strumenti di AI come supporto per inventare i dati demo — i clienti, i progetti e i task di esempio che avete visto — e per la brand identity del progetto, cioè il logo e la palette dei colori. Con questo progetto ho messo insieme tutto il percorso: la costruzione di un'API REST, l'autenticazione con token, un database con relazioni tra le entità, e un frontend React con rotte protette e stile scritto a mano. Tra le cose che vorrei aggiungere in futuro: filtri e ricerca nelle liste, più test e l'upload di documenti per i progetti. Grazie per l'attenzione.
+Per concludere: il progetto è deployato con il frontend su Vercel, il backend su Render e il database su MongoDB Atlas. Una nota sulla trasparenza: ho usato strumenti di AI come supporto per inventare i dati demo — i clienti, i progetti e i task di esempio che avete visto — e per la brand identity del progetto, cioè il logo e la palette dei colori. Con questo progetto ho messo insieme tutto il percorso: API REST, autenticazione con token, database con relazioni tra entità, e un frontend React con rotte protette, componenti riutilizzabili e stile scritto a mano. Grazie per l'attenzione.
 
 ---
 
 ## Promemoria prima di registrare
 
 1. Sveglia il backend su Render aprendo l'URL dell'API un minuto prima (il piano gratuito lo addormenta).
-2. Usa un account demo pulito, oppure preparane uno con 2-3 clienti già inseriti se non vuoi partire da zero.
+2. I dati demo sono già nel database: accedi con il tuo account e trovi clienti, progetti e task pronti.
 3. Tieni pronti: browser sull'app, editor con il progetto aperto, terminale nella cartella backend per `npm test`.
 4. Se qualcosa non carica subito durante il video, è quasi sempre Render che si sta svegliando: aspetta qualche secondo e ricarica.
